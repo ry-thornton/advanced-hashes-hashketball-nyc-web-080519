@@ -229,10 +229,13 @@ def big_shoe_rebounds
   game_hash[:home][:players].each do |index|
     if index[:shoe] == value
       return index[:rebounds]
-    end
-    game_hash[:away][:players].each do |index|
+    elsif game_hash[:away][:players].each do |index|
       if index[:shoe] == value
         return index[:rebounds]
+      end
+    end
+  end
+end
       end
     end
   end
