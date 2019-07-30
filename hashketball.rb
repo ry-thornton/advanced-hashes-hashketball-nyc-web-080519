@@ -247,6 +247,16 @@ def most_points_scored
     points_scored.push(index[:points])
   end
   most = points_scored.max
+  game_hash[:home][:players].each do |index|
+    if index[:points] == most
+      return index[:name]
+    game_hash[:away][:players].each do |index|
+        if index[:points] == most
+          return index[:name]
+        end
+      end
+    end
+  end
   
   
   
